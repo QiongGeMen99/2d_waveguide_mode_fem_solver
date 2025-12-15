@@ -2,7 +2,7 @@
 
 基于标量有限元（线性三角形单元），对二维均匀波导横截面求解 TE/TM 截止本征模与对应场分布。实现参考 Jian-Ming Jin《Theory and Computation of Electromagnetic Fields》。
 
-- TE：未知量 $H_z$，金属壁 Neumann 边界（$\dfrac{\partial H_z}{\partial n}=0$），需丢弃零特征模。
+- TE：未知量 $H_z$，金属壁 Neumann 边界（$\frac{\partial H_z}{\partial n}=0$），需丢弃零特征模。
 - TM：未知量 $E_z$，金属壁 Dirichlet 边界（$E_z=0$），通过消元实现。
 - 输出：截止波数 $k_0$、截止波长 $\lambda$、截止频率 $f$，以及模态场分布（`Hz`/`Ez` 和横向 `Ex,Ey,Hx,Hy`）。
 
@@ -58,7 +58,7 @@ octave --no-gui main.m
 - TM 求解：[eigen_TM.m](eigen_TM.m)
   - 识别边界节点并做缩减装配 `A_TM,B_TM`，解 $A\,E_z = k_0^2\,B\,E_z$，得到 TM 截止 $k_0$ 与模态 $E_z$
 - 参数换算（均在脚本内完成）：
-  - 若广义特征值为 $\lambda_{\mathrm{eig}}$，则 $k_0 = \sqrt{\lambda_{\mathrm{eig}}}$；$\lambda = \dfrac{2\pi}{k_0}$；$f = \dfrac{k_0}{2\pi\,\sqrt{\mu\,\varepsilon}}$。
+  - 若广义特征值为 $\lambda_{\mathrm{eig}}$，则 $k_0 = \sqrt{\lambda_{\mathrm{eig}}}$；$\lambda = \frac{2\pi}{k_0}$；$f = \frac{k_0}{2\pi\,\sqrt{\mu\,\varepsilon}}$。
 
 ## 绘图与后处理
 
