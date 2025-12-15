@@ -2,8 +2,8 @@
 
 基于标量有限元（线性三角形单元），对二维均匀波导横截面求解 TE/TM 截止本征模与对应场分布。实现参考 Jian-Ming Jin《Theory and Computation of Electromagnetic Fields》。
 
-- TE：未知量 $H_z$，金属壁 Neumann 边界（$\frac{\partial H_z}{\partial n}=0$），需丢弃零特征模。
-- TM：未知量 $E_z$，金属壁 Dirichlet 边界（$E_z=0$），通过消元实现。
+- TE：未知量 $H_z$，金属壁 Neumann 边界（$\frac{\partial H_z}{\partial n}=0）$。
+- TM：未知量 $E_z$，金属壁 Dirichlet 边界（$E_z=0$。
 - 输出：截止波数 $k_0$、截止波长 $\lambda$、截止频率 $f$，以及模态场分布（`Hz`/`Ez` 和横向 `Ex,Ey,Hx,Hy`）。
 
 ## 目录结构
